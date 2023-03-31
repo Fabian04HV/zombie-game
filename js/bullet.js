@@ -9,5 +9,12 @@ class Bullet{
     stroke("black")
     circle(this.x, this.y, this.size)
     console.log("shoot")
+    this.updatePosition()
+  }
+  updatePosition(){
+    //gradually update the bullets position
+    //to move towards the cursor position
+    let cursorPosition = [mouseX, mouseY]
+    console.log(cursorPosition)
   }
 }

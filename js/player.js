@@ -18,7 +18,7 @@ class Player{
     pop();
   }
   shoot(){
-    const bullet = new Bullet(this.x, this.y, 20);
+    const bullet = new Bullet(this.x + this.width / 2, this.y + this.height / 2, 20);
     this.bullets.push(bullet); // add bullet to array
   }
   draw(){
