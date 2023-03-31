@@ -4,6 +4,7 @@ class Player{
     this.y = 300
     this.width = 120
     this.height = 120
+    this.bullets = []
   }
   aim() {
     //rotate the player towards cursor position
@@ -17,10 +18,13 @@ class Player{
     pop();
   }
   shoot(){
-    const bullet = new Bullet()
-    bullet.draw()
+    const bullet = new Bullet(this.x, this.y, 20);
+    this.bullets.push(bullet); // add bullet to array
   }
   draw(){
     this.aim();
+    this.bullets.forEach(bullet =>{
+      bullet.draw()
+    })
   }
 }

@@ -1,13 +1,13 @@
 class Bullet{
-  constructor(x, y){
+  constructor(x, y, size){
     this.x = x
     this.y = y
-    this.width = 20
-    this.height = 20
+    this.size = size
   }
   draw(){
     fill("yellow")
-    circle(100, 100, 10)
-    console.log("shooooot")
+    stroke("black")
+    circle(this.x, this.y, this.size)
+    console.log("shoot")
   }
 }
