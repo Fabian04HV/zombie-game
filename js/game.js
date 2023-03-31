@@ -7,6 +7,8 @@ class Game{
     this.playerImage = loadImage("../Top_Down_Survivor/handgun/idle/survivor-idle_handgun_0.png")
   }
   draw(){
+    // clear()
+    background("#101111")
     this.player.draw()
   }
 }

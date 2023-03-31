@@ -14,9 +14,21 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px
+  gap: 10px;
 }
 h1{
-  color: red;
   font-size: 3rem;
+  user-select: none;
+  /* Gradient using the -webkit-text-fill-color property */
+  background: linear-gradient(to bottom, rgb(255, 120, 120), red, black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Vendor-specific prefixes for other browsers */
+  background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+
+  /* Fallback color */
+  color: red;
 }
