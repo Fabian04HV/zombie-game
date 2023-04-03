@@ -47,7 +47,6 @@ class Bullet{
     let zombieY = zombieInfo.y + (zombieInfo.height / 2)
 
     let distance = dist(bulletX, bulletY, zombieX, zombieY)
-    console.log(distance)
     if(distance <= 50){
       return true
     }
