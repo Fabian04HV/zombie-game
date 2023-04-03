@@ -5,13 +5,14 @@ class Bullet{
     this.y = y
     this.goal = goal
     this.size = size
-    this.speed = 8
+    this.speed = 15
     this.angle = atan2(this.goal[1] - this.y, this.goal[0] - this.x); // calculate the angle between the bullet and its goal
   
   }
   draw(){
-    fill("yellow")
-    stroke("black")
+    fill("white")
+    stroke("cornflowerblue")
+    strokeWeight(3)
     circle(this.x, this.y, this.size)
 
     // calculate the bullet's movement based on its angle
