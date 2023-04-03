@@ -2,14 +2,14 @@ class Player{
   constructor(){
     this.x = 550
     this.y = 300
-    this.width = 120
-    this.height = 120
+    this.width = 100
+    this.height = 100
     this.bullets = []
   }
   aim() {
     //rotate the player towards cursor position
-    let dx = mouseX - this.x;
-    let dy = mouseY - this.y; 
+    let dx = mouseX - this.x - this.width / 2;
+    let dy = mouseY - this.y - this.height / 2; 
     let angle = atan2(dy, dx);
     push();
     translate(this.x + this.width / 2, this.y + this.height / 2);
