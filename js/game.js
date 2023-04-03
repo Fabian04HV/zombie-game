@@ -4,8 +4,6 @@ class Game{
     this.zombies = []
     this.playerImage
     this.zombieImage
-
-    this.zombie = new Zombie()
   }
   preload(){
     this.playerImage = loadImage("../Top_Down_Survivor/handgun/idle/survivor-idle_handgun_0.png")

@@ -5,6 +5,7 @@ class Player{
     this.width = 100
     this.height = 100
     this.bullets = []
+    this.health = 3
   }
   aim() {
     //rotate the player towards cursor position
@@ -22,10 +23,32 @@ class Player{
     const bullet = new Bullet(this.x + this.width / 2, this.y + this.height / 2, 10, cursorPosition);
     this.bullets.push(bullet); // add bullet to array
   }
+  checkForBite(){
+    const playerX = this.x + (this.width / 2)
+    const playerY = this.y + (this.height / 2)
+
+    game.zombies.forEach(function(zombie){
+      let zombieX = zombie.x + (zombie.width / 2)
+      let zombieY = zombie.y + (zombie.height / 2)
+      let distance = dist(zombieX, zombieY, playerX, playerY)
+      if(distance <= 30){
+        game.zombies.splice(game.zombies.indexOf(zombie), 1)
+        console.log(zombie + "BITE")
+
+        game.player.health--
+
+        if(game.player.health <= 0){
+          console.log("Dead")
+        }
+      }
+    })
+  }
+
   draw(){
     this.aim();
     this.bullets.forEach(bullet =>{
       bullet.draw()
     })
+    this.checkForBite()
   }
 }
