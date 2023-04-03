@@ -24,5 +24,33 @@ class Bullet{
       const index = game.player.bullets.indexOf(this);
       game.player.bullets.splice(index, 1);
     }
+
+     // check for collision with zombies
+     for (let i = 0; i < game.zombies.length; i++) {
+      const zombie = game.zombies[i];
+      if (this.collision(zombie)) {
+        // remove bullet
+        const index = game.player.bullets.indexOf(this);
+        game.player.bullets.splice(index, 1);
+        // remove zombie
+        game.zombies.splice(i, 1);
+        // exit loop, because bullet can only hit one zombie
+        break;
+      }
+    }
+  }
+  collision(zombieInfo){
+    let bulletX = this.x// + this.width / 2
+    let bulletY = this.y// + this.height / 2
+
+    let zombieX = zombieInfo.x + (zombieInfo.width / 2)
+    let zombieY = zombieInfo.y + (zombieInfo.height / 2)
+
+    let distance = dist(bulletX, bulletY, zombieX, zombieY)
+    console.log(distance)
+    if(distance <= 50){
+      return true
+    }
+    return false
   }
 }

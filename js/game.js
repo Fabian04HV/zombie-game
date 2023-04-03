@@ -29,24 +29,19 @@ class Game{
 
       switch(randSide){
         case 0:
-          console.log("top")
           zombie = new Zombie(randX, 0) 
           break;
         case 1: 
-          console.log("bottom")
           zombie = new Zombie(randX, height - 100) 
           break;
         case 2: 
-          console.log("left")
           zombie = new Zombie(0, randY) 
           break;
         case 3: 
-          console.log("right")
           zombie = new Zombie(width - 100, randY) 
           break;
       }
       game.zombies.push(zombie)
-      console.log("zombie spawned")
     }, 1000)
   }
 }
