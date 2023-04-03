@@ -9,7 +9,7 @@ class Player{
   aim() {
     //rotate the player towards cursor position
     let dx = mouseX - this.x;
-    let dy = mouseY - this.y;
+    let dy = mouseY - this.y; 
     let angle = atan2(dy, dx);
     push();
     translate(this.x + this.width / 2, this.y + this.height / 2);
@@ -18,7 +18,8 @@ class Player{
     pop();
   }
   shoot(){
-    const bullet = new Bullet(this.x + this.width / 2, this.y + this.height / 2, 20);
+    cursorPosition = [mouseX, mouseY]
+    const bullet = new Bullet(this.x + this.width / 2, this.y + this.height / 2, 10, cursorPosition);
     this.bullets.push(bullet); // add bullet to array
   }
   draw(){
