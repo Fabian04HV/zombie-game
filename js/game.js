@@ -105,7 +105,7 @@ class Game{
       }      
       this.zombies.push(zombie);
     }
-    if(this.spawnInterval > 18){
+    if(this.spawnInterval > 20){
       this.spawnInterval -= this.spawnIntervalDecrement;
     }
   }

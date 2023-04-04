@@ -4,7 +4,7 @@ class Zombie{
     this.y = y
     this.width = 100
     this.height = 100
-    this.speed = Math.random() * 3.001 + 2
+    this.speed = Math.random() * 2.801 + 2
     console.log(this.speed)
   }
   draw(){

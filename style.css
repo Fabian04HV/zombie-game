@@ -8,7 +8,7 @@
 }
 html{
   font-family: "Luckiest Guy", sans-serif;
-  font-size: 18pt;
+  font-size: 20pt;
   color: var(--text-color);
 }
 body{
@@ -21,7 +21,7 @@ body{
   gap: 10px;
 }
 h1{
-  font-size: 3rem;
+  font-size: 2rem;
   user-select: none;
   /* Gradient using the -webkit-text-fill-color property */
   background: linear-gradient(to bottom, rgb(255, 120, 120), red, black);
@@ -42,10 +42,11 @@ h2{
 }
 .game-over-container{
   position: absolute;
-  width: 300px;
-  padding: 20px;
-  background: rgba(113, 96, 171, 0.1);
-  backdrop-filter: blur(6px);
+  width: 400px;
+  padding: 30px;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  border: 4px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   color: var(--text-color);
   display: none;
@@ -58,6 +59,7 @@ h2{
 }
 .game-over-container h2{
   color: red;
+  font-size: 50pt;
 }
 .game-over-container a{
   text-decoration: none;
@@ -67,13 +69,14 @@ h2{
   color: darkred;
 }
 .hud{
-  width: 1200px;
+  position: absolute;
+  top: 25px;
+  width: 1080px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
 }
 #health{
   user-select: none;
-  font-size: 42pt;
+  font-size: 32pt;
   color: red;
 }

@@ -1,8 +1,8 @@
 const healthText = document.getElementById("health")
 class Player{
   constructor(){
-    this.x = 550
-    this.y = 300
+    this.x = 490
+    this.y = 250
     this.width = 100
     this.height = 100
     this.bullets = []
