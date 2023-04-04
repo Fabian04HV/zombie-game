@@ -1,21 +1,32 @@
+const scoreTexts = document.querySelectorAll(".score")
+const gameOverScreen = document.querySelector(".game-over-container")
+let gameOver = false
+
 class Game{
   constructor(){
     this.player = new Player()
     this.zombies = []
     this.playerImage
     this.zombieImage
+    this.score = 0
   }
   preload(){
     this.playerImage = loadImage("../Top_Down_Survivor/handgun/idle/survivor-idle_handgun_0.png")
     this.zombieImage = loadImage("../images/export/skeleton-attack_0.png")
   }
   draw(){
-    background("#101111")
-    this.player.draw()
-
-    this.zombies.forEach(zombie =>{
-      zombie.draw()
-    })
+    if(gameOver) {
+      gameOverScreen.classList.add("active")
+      noLoop()
+    }
+    else{
+      background("#101111")
+      this.player.draw()
+  
+      this.zombies.forEach(zombie =>{
+        zombie.draw()
+      })
+    }
   }
   spawnZombies(){
     setInterval(function(){
@@ -41,5 +52,10 @@ class Game{
       }
       game.zombies.push(zombie)
     }, 1000)
+  }
+  displayScore(){
+    scoreTexts.forEach(text =>{
+      text.innerText = this.score
+    })
   }
 }

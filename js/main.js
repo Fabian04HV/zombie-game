@@ -8,13 +8,10 @@ function preload(){
 }
 function setup(){
   createCanvas(1200, 700)
-  // noCursor()
   game.spawnZombies()
 }
 function draw(){
   game.draw()
-  // image(crosshairImg, mouseX, mouseY, 20, 20);
-  // cursor('none');
 }
 function mouseClicked(){
   game.player.shoot()

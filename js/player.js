@@ -38,7 +38,7 @@ class Player{
         game.player.health--
 
         if(game.player.health <= 0){
-          console.log("Dead")
+          gameOver = true
         }
       }
     })

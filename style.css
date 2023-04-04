@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
 }
+:root{
+  --text-color: rgb(255, 204, 197);
+}
 html{
   font-family: "Luckiest Guy", sans-serif;
   font-size: 18pt;
@@ -31,4 +34,34 @@ h1{
 
   /* Fallback color */
   color: red;
+}
+h2{
+  color: var(--text-color);
+  user-select: none;
+}
+.game-over-container{
+  position: absolute;
+  width: 300px;
+  padding: 20px;
+  background: rgba(113, 96, 171, 0.1);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  color: var(--text-color);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.game-over-container.active{
+  display: flex;
+}
+.game-over-container h2{
+  color: red;
+}
+.game-over-container a{
+  text-decoration: none;
+  color: red;
+}
+.game-over-container a:hover{
+  color: darkred;
 }

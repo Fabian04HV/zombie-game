@@ -48,6 +48,8 @@ class Bullet{
 
     let distance = dist(bulletX, bulletY, zombieX, zombieY)
     if(distance <= 50){
+      game.score++
+      game.displayScore()
       return true
     }
     return false
