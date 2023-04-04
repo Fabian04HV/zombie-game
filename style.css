@@ -73,6 +73,7 @@ h2{
   align-items: flex-end;
 }
 #health{
+  user-select: none;
   font-size: 42pt;
   color: red;
 }
