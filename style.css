@@ -9,6 +9,7 @@
 html{
   font-family: "Luckiest Guy", sans-serif;
   font-size: 18pt;
+  color: var(--text-color);
 }
 body{
   min-height: 100vh;
@@ -64,4 +65,14 @@ h2{
 }
 .game-over-container a:hover{
   color: darkred;
+}
+.hud{
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#health{
+  font-size: 42pt;
+  color: red;
 }

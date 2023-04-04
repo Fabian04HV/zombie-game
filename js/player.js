@@ -1,3 +1,4 @@
+const healthText = document.getElementById("health")
 class Player{
   constructor(){
     this.x = 550
@@ -34,8 +35,10 @@ class Player{
       if(distance <= 30){
         game.zombies.splice(game.zombies.indexOf(zombie), 1)
         console.log(zombie + "BITE")
-
         game.player.health--
+        let currentHealth = healthText.innerText
+        let healthMinusOne = currentHealth.slice(0, -1)
+        healthText.innerText = healthMinusOne
 
         if(game.player.health <= 0){
           gameOver = true
