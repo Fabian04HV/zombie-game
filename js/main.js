@@ -8,7 +8,7 @@ function preload(){
 }
 function setup(){
   createCanvas(1200, 700)
-  game.spawnZombies()
+  // game.spawnZombies(1000)
 }
 function draw(){
   game.draw()

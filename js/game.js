@@ -9,6 +9,10 @@ class Game{
     this.playerImage
     this.zombieImage
     this.score = 0
+
+    this.spawnInterval = 60; // spawn a zombie every 120 frames
+    this.spawnIntervalDecrement = 0.05; // decrease spawn interval by 0.5 frames every frame
+    this.lastSpawnFrame = 0;
   }
   preload(){
     this.playerImage = loadImage("../Top_Down_Survivor/handgun/idle/survivor-idle_handgun_0.png")
@@ -22,14 +26,15 @@ class Game{
     else{
       background("#101111")
       this.player.draw()
-  
+      this.spawnZombies()
       this.zombies.forEach(zombie =>{
         zombie.draw()
       })
     }
   }
   spawnZombies(){
-    setInterval(function(){
+    if (frameCount - this.lastSpawnFrame >= this.spawnInterval) {
+      this.lastSpawnFrame = frameCount;
       let randX = Math.floor(Math.random() * width)
       let randY = Math.floor(Math.random() * height)
 
@@ -49,9 +54,13 @@ class Game{
         case 3: 
           zombie = new Zombie(width - 100, randY) 
           break;
-      }
-      game.zombies.push(zombie)
-    }, 1000)
+      }      
+      this.zombies.push(zombie);
+    }
+    if(this.spawnInterval > 12){
+      this.spawnInterval -= this.spawnIntervalDecrement;
+    }
+    console.log(this.spawnInterval)
   }
   displayScore(){
     scoreTexts.forEach(text =>{
