@@ -10,8 +10,8 @@ class Game{
     this.zombieImage
     this.score = 0
 
-    this.spawnInterval = 60; // spawn a zombie every 120 frames
-    this.spawnIntervalDecrement = 0.05; // decrease spawn interval by 0.5 frames every frame
+    this.spawnInterval = 60; // spawn a zombie every 60 frames
+    this.spawnIntervalDecrement = 0.035;
     this.lastSpawnFrame = 0;
   }
   preload(){
@@ -57,10 +57,9 @@ class Game{
       }      
       this.zombies.push(zombie);
     }
-    if(this.spawnInterval > 12){
+    if(this.spawnInterval > 18){
       this.spawnInterval -= this.spawnIntervalDecrement;
     }
-    console.log(this.spawnInterval)
   }
   displayScore(){
     scoreTexts.forEach(text =>{

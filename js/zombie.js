@@ -4,6 +4,8 @@ class Zombie{
     this.y = y
     this.width = 100
     this.height = 100
+    this.speed = Math.random() * 3.001 + 2
+    console.log(this.speed)
   }
   draw(){
     this.facePlayer()
@@ -20,7 +22,7 @@ class Zombie{
     pop()
   }
   followPlayer() {
-    const speed = 2
+    const speed = this.speed;
     const dx = game.player.x + game.player.width/2 - this.x - this.width / 2
     const dy = game.player.y + game.player.height/2 - this.y - this.height / 2
     const angle = atan2(dy, dx)
