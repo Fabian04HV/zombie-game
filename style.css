@@ -69,8 +69,8 @@ h2{
   color: darkred;
 }
 .hud{
-  position: absolute;
-  top: 25px;
+  position: fixed;
+  top: 0;
   width: 1080px;
   display: flex;
   justify-content: space-between;
