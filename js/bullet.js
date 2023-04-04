@@ -29,6 +29,9 @@ class Bullet{
      for (let i = 0; i < game.zombies.length; i++) {
       const zombie = game.zombies[i];
       if (this.collision(zombie)) {
+        //increase score
+        game.score++
+        game.displayScore()
         // remove bullet
         const index = game.player.bullets.indexOf(this);
         game.player.bullets.splice(index, 1);
@@ -48,8 +51,6 @@ class Bullet{
 
     let distance = dist(bulletX, bulletY, zombieX, zombieY)
     if(distance <= 50){
-      game.score++
-      game.displayScore()
       return true
     }
     return false

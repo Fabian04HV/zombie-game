@@ -11,7 +11,6 @@ class Player{
     this.momentOfDamage 
   }
   aim() {
-    // console.log(this.redTint)
     //rotate the player towards cursor position
     let dx = mouseX - this.x - this.width / 2;
     let dy = mouseY - this.y - this.height / 2; 
@@ -46,24 +45,27 @@ class Player{
       let distance = dist(zombieX, zombieY, playerX, playerY)
       if(distance <= 30){
         game.zombies.splice(game.zombies.indexOf(zombie), 1)
-        console.log(zombie + "BITE")
-        game.player.health--
-        
-        console.log(this.redTint)
-        this.redTint = true 
-        this.momentOfDamage = frameCount
 
-        let currentHealth = healthText.innerText
-        let healthMinusOne = currentHealth.slice(0, -1)
-        healthText.innerText = healthMinusOne
-
-        if(game.player.health <= 0){
-          gameOver = true
-        }
+        this.receiveDamage()
+        this.checkForGameOver()
       }
     })
   }
+  receiveDamage(){
+    game.player.health--
+      
+    this.redTint = true 
+    this.momentOfDamage = frameCount
 
+    let currentHealth = healthText.innerText
+    let healthMinusOne = currentHealth.slice(0, -1)
+    healthText.innerText = healthMinusOne
+  }
+  checkForGameOver(){
+    if(game.player.health <= 0){
+      gameOver = true
+    }
+  }
   draw(){
     this.aim();
     this.bullets.forEach(bullet =>{
