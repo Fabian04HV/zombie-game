@@ -12,8 +12,28 @@ class Game{
     
     this.zombies = []
     this.zombieImage
-    this.spawnInterval = 60; // spawn a zombie every 60 frames
+
+    switch(difficulty){
+      case "easy":
+        this.spawnInterval = 80; // spawn a zombie every 60 frames
+        this.lowestPossibleSpawnInterval = 25
+        break;
+      case "medium":
+        this.spawnInterval = 60
+        this.lowestPossibleSpawnInterval = 20
+        break;
+      case "hard":
+        this.spawnInterval = 30
+        this.lowestPossibleSpawnInterval = 12
+        break;
+      case "impossible":
+        this.spawnInterval = 20
+        this.lowestPossibleSpawnInterval = 8
+        break;
+    }
+    //this.spawnInterval = 60; // spawn a zombie every 60 frames
     this.spawnIntervalDecrement = 0.035;
+    // this.lowestPossibleSpawnInterval = 20
     this.lastSpawnFrame = 0;
 
     this.zombieImagesIndex = 0
@@ -105,7 +125,7 @@ class Game{
       }      
       this.zombies.push(zombie);
     }
-    if(this.spawnInterval > 20){
+    if(this.spawnInterval > this.lowestPossibleSpawnInterval){
       this.spawnInterval -= this.spawnIntervalDecrement;
     }
   }

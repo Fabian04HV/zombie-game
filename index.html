@@ -10,23 +10,25 @@
   <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
 </head>
 <body>
-  <div class="hud">
-    <span id="health">❤❤❤</span>
-    <h2>💀<span class="score">0</span> </h2>
-  </div>
+  <h1>Zombie Apocalypse</h1>
+  <h2>The Last Soldier</h2>
+  <label for="difficulty">Choose Difficulty</label>
+  <select name="difficulty" id="difficulty">
+    <option value="easy">EASY</option>
+    <option value="medium">MEDIUM</option>
+    <option value="hard">HARD</option>
+    <option value="impossible">IMPOSSIBLE</option>
+  </select>
+  <a id="start-game-link" href="game.html">Start Game</a>
 
-  <div class="game-over-container">
-    <h2>Game Over</h2>
-    <p>Score: <span class="score">0</span> </p>
-    <p>Highscore: <span>0</span> </p>
-    <a href="index.html">Play Again</a>
-  </div>
-
-  <script src="../js/bloodParticle.js"></script>
-  <script src="../js/zombie.js"></script>
-  <script src="../js/bullet.js"></script>
-  <script src="../js/player.js"></script>
-  <script src="../js/game.js"></script>
-  <script src="../js/main.js"></script>
+  <script>
+    const startGameLink = document.getElementById('start-game-link');
+    startGameLink.addEventListener('click', function() {
+      const difficultySelect = document.getElementById('difficulty');
+      const difficulty = difficultySelect.value;
+      localStorage.setItem('difficulty', difficulty);
+      // window.open('game.html', '_blank');
+    });
+  </script>
 </body>
 </html>

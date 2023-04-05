@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zombie Game</title>
+  <link rel="icon" type="image/x-icon" href="images/export/skeleton-attack_0.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
+</head>
+<body>
+  <div class="hud">
+    <span id="health">❤❤❤</span>
+    <h2>💀<span class="score">0</span> </h2>
+  </div>
+
+  <div class="game-over-container">
+    <h2>Game Over</h2>
+    <p>Score: <span class="score">0</span> </p>
+    <p>Highscore: <span>0</span> </p>
+    <a href="game.html">Play Again</a>
+    <a href="index.html">Home Menu</a>
+  </div>
+
+  <script>
+    //Set Difficulty
+    const difficulty = localStorage.getItem('difficulty');
+        
+    // Set the difficulty of the game based on the stored value
+    if (difficulty === 'easy') {
+      console.log("difficulty: EASY")
+    }
+    else if (difficulty === 'medium') {
+      console.log("difficulty: MEDIUM")
+    }
+    else if (difficulty === 'hard') {
+      console.log("difficulty: HARD")
+    }
+    else if (difficulty === 'impossible') {
+      console.log("difficulty: IMPOSSIBLE")
+    }
+    
+    else {
+      console.log("difficulty default")
+    }
+  </script>
+  <script src="../js/bloodParticle.js"></script>
+  <script src="../js/zombie.js"></script>
+  <script src="../js/bullet.js"></script>
+  <script src="../js/player.js"></script>
+  <script src="../js/game.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

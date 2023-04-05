@@ -4,8 +4,21 @@ class Zombie{
     this.y = y
     this.width = 100
     this.height = 100
-    this.speed = Math.random() * 2.801 + 2
-    console.log(this.speed)
+
+    switch(difficulty){
+      case "easy":
+        this.speed = Math.random() * 2.801 + 1
+        break;
+      case "medium":
+        this.speed = Math.random() * 2.801 + 2
+        break;
+      case "hard":
+        this.speed = Math.random() * 3.001 + 3
+        break;
+      case "impossible":
+        this.speed = Math.random() * 3.001 + 4
+        break;
+    }
   }
   draw(){
     this.facePlayer()
