@@ -36,6 +36,7 @@ class Bullet{
         const index = game.player.bullets.indexOf(this);
         game.player.bullets.splice(index, 1);
         // remove zombie
+        game.zombieExplodeSound.play()
         game.zombies.splice(i, 1);
         createBloodSplash(zombie.x + zombie.width / 2, zombie.y + zombie.height / 2)
         // exit loop, because bullet can only hit one zombie

@@ -53,7 +53,7 @@ class Player{
   }
   receiveDamage(){
     game.player.health--
-      
+    game.playerHurtSound.play()
     this.redTint = true 
     this.momentOfDamage = frameCount
 

@@ -56,9 +56,14 @@ class Game{
       this.zombieImage15,
       this.zombieImage16
     ]
+
+    this.zombieExplodeSound
+    this.gunSound
+    this.playerHurtSound
   }
   preload(){
-    this.playerImage = loadImage("../Top_Down_Survivor/handgun/idle/survivor-idle_handgun_0.png")
+    // this.playerImage = loadImage("../Top_Down_Survivor/handgun/idle/survivor-idle_handgun_0.png")
+    this.playerImage = loadImage("../images/survivor-idle_handgun_00.png")
     this.backgroundImage = loadImage("../images/forest-pack/forest-night.png")
     this.zombieImage = loadImage("../images/zombie-walking.gif")
 
@@ -80,7 +85,14 @@ class Game{
     this.zombieImages[15] = loadImage("../images/export/skeleton-move_15.png")
     this.zombieImages[16] = loadImage("../images/export/skeleton-move_16.png")
   }
+  setup(){
+    soundFormats('mp3')
+    this.zombieExplodeSound = loadSound("../audio/zombie-explode2.mp3")
+    this.gunSound = loadSound("../audio/handgun.mp3")
+    this.playerHurtSound = loadSound("../audio/man-hurt.mp3")
+  }
   draw(){
+    // console.log(this.gunSound.volume)
     if(gameOver) {
       gameOverScreen.classList.add("active")
       noLoop()

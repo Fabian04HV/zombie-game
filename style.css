@@ -21,55 +21,6 @@ body{
   align-items: center;
   gap: 10px;
 }
-.game-over-container{
-  position: absolute;
-  width: 400px;
-  padding: 30px;
-  background: rgba(0, 0, 0, 0.69);
-  backdrop-filter: blur(3px);
-  border: 4px solid var(--main-color);
-  border-radius: 20px;
-  color: var(--text-color);
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-.game-over-container.active{
-  display: flex;
-}
-.game-over-container h2{
-  user-select: none;
-  color: var(--main-color);
-  text-shadow: 3px 3px 0px var(--text-color);
-  font-size: 50pt;
-}
-.game-over-container a{
-  text-decoration: none;
-  color: var(--main-color);
-  text-shadow: 1px 1px 0px var(--text-color);
-}
-.game-over-container a:hover{
-  filter: brightness(150%);
-}
-.hud{
-  position: fixed;
-  top: 0;
-  width: 1080px;
-  display: flex;
-  justify-content: space-between;
-}
-#health{
-  user-select: none;
-  font-size: 32pt;
-  color: purple;
-}
-h2:has(.score){
-  user-select: none;
-}
-main canvas{
-  border-radius: 20px;
-}
 /*Main Menu styles .................................. */
 h1, h2{
   color: #333333; /* Fallback color */
@@ -99,4 +50,53 @@ select[name="difficulty"]{
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
+}
+/*END OF MAIN MENU STYLES --------------------- */
+.game-over-container{
+  position: absolute;
+  width: 400px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.69);
+  backdrop-filter: blur(3px);
+  border: 4px solid var(--main-color);
+  border-radius: 20px;
+  color: var(--text-color);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.game-over-container.active{
+  display: flex;
+}
+.game-over-container h2{
+  user-select: none;
+  color: var(--main-color);
+  font-size: 50pt;
+}
+.game-over-container a{
+  text-decoration: none;
+  color: var(--main-color);
+  text-shadow: 1px 1px 0px var(--text-color);
+}
+.game-over-container a:hover{
+  filter: brightness(150%);
+}
+.hud{
+  position: fixed;
+  top: 0;
+  width: 1080px;
+  display: flex;
+  justify-content: space-between;
+}
+#health{
+  user-select: none;
+  font-size: 32pt;
+  color: var(--main-color);
+}
+h2:has(.score){
+  user-select: none;
+}
+main canvas{
+  border-radius: 20px;
 }
