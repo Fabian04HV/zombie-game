@@ -31,6 +31,7 @@ class Bullet{
       if (this.collision(zombie)) {
         //increase score
         game.score++
+        game.setHighScore() 
         game.displayScore()
         // remove bullet
         const index = game.player.bullets.indexOf(this);

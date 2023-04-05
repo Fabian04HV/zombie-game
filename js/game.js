@@ -1,4 +1,5 @@
 const scoreTexts = document.querySelectorAll(".score")
+const highscoreText = document.querySelector(".highscore")
 const gameOverScreen = document.querySelector(".game-over-container")
 let gameOver = false
 
@@ -7,7 +8,8 @@ class Game{
     this.player = new Player()
     this.playerImage
     this.score = 0
-
+    this.highscore = localStorage.getItem('highscore')
+    console.log(this.highscore)
     this.backgroundImage
     
     this.zombies = []
@@ -90,6 +92,7 @@ class Game{
     this.zombieExplodeSound = loadSound("../audio/zombie-explode2.mp3")
     this.gunSound = loadSound("../audio/handgun.mp3")
     this.playerHurtSound = loadSound("../audio/man-hurt.mp3")
+    this.displayScore()
   }
   draw(){
     // console.log(this.gunSound.volume)
@@ -145,11 +148,18 @@ class Game{
     scoreTexts.forEach(text =>{
       text.innerText = this.score
     })
+    highscoreText.innerText = this.highscore
   }
   zombieWalkAnim(){
     if(this.zombieImagesIndex == 17){
       this.zombieImagesIndex = 0
     }
     this.zombieImage = this.zombieImages[this.zombieImagesIndex] 
+  }
+  setHighScore(){
+    if(this.score > this.highscore){
+      this.highscore = this.score
+      localStorage.setItem('highscore', this.highscore);
+    }
   }
 }
