@@ -10,9 +10,9 @@ class Bullet{
   
   }
   draw(){
-    fill("white")
-    stroke("cornflowerblue")
-    strokeWeight(3)
+    fill("yellow")
+    stroke("orange")
+    // strokeWeight(2)
     circle(this.x, this.y, this.size)
 
     // calculate the bullet's movement based on its angle

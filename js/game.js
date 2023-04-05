@@ -5,15 +5,16 @@ let gameOver = false
 class Game{
   constructor(){
     this.player = new Player()
-    this.zombies = []
     this.playerImage
-    this.zombieImage
     this.score = 0
 
+    this.backgroundImage
+    
+    this.zombies = []
+    this.zombieImage
     this.spawnInterval = 60; // spawn a zombie every 60 frames
     this.spawnIntervalDecrement = 0.035;
     this.lastSpawnFrame = 0;
-
 
     this.zombieImagesIndex = 0
     this.zombieImages = [
@@ -35,12 +36,10 @@ class Game{
       this.zombieImage15,
       this.zombieImage16
     ]
-    
-
   }
   preload(){
     this.playerImage = loadImage("../Top_Down_Survivor/handgun/idle/survivor-idle_handgun_0.png")
-    
+    this.backgroundImage = loadImage("../images/forest-pack/forest-night.png")
     this.zombieImage = loadImage("../images/zombie-walking.gif")
 
     this.zombieImages[0] = loadImage("../images/export/skeleton-move_0.png")
@@ -67,8 +66,7 @@ class Game{
       noLoop()
     }
     else{
-      background("#101111")
-
+      background(this.backgroundImage)
       if(frameCount % 4 == 0){
         this.zombieImagesIndex++
       }
@@ -86,21 +84,23 @@ class Game{
       let randX = Math.floor(Math.random() * width)
       let randY = Math.floor(Math.random() * height)
 
-      let randSide = Math.floor(Math.random() * 4)
+      randX = Math.random() * ((width - 200) - 200) + 200;
+      randY = Math.random() * ((height - 100) - 300) + 300;
+
+
+
+      let randSide = Math.floor(Math.random() * 3)
       let zombie
 
       switch(randSide){
-        case 0:
-          zombie = new Zombie(randX, 0) 
+        case 0: 
+          zombie = new Zombie(randX, height + 100) 
           break;
         case 1: 
-          zombie = new Zombie(randX, height - 100) 
+          zombie = new Zombie(-100, randY) 
           break;
         case 2: 
-          zombie = new Zombie(0, randY) 
-          break;
-        case 3: 
-          zombie = new Zombie(width - 100, randY) 
+          zombie = new Zombie(width + 100, randY) 
           break;
       }      
       this.zombies.push(zombie);

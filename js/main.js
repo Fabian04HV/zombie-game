@@ -5,6 +5,9 @@ function preload(){
 }
 function setup(){
   createCanvas(1100, 600)
+  // tint(70,70,250)
+  // background(game.backgroundImage)
+  // noTint()
 }
 function draw(){
   game.draw()

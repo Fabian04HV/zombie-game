@@ -4,6 +4,7 @@
   padding: 0;
 }
 :root{
+  --main-color: #7700ff;
   --text-color: rgb(255, 204, 197);
 }
 html{
@@ -20,33 +21,13 @@ body{
   align-items: center;
   gap: 10px;
 }
-h1{
-  font-size: 2rem;
-  user-select: none;
-  /* Gradient using the -webkit-text-fill-color property */
-  background: linear-gradient(to bottom, rgb(255, 120, 120), red, black);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  /* Vendor-specific prefixes for other browsers */
-  background-clip: text;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-
-  /* Fallback color */
-  color: red;
-}
-h2{
-  color: var(--text-color);
-  user-select: none;
-}
 .game-over-container{
   position: absolute;
   width: 400px;
   padding: 30px;
-  background: transparent;
-  backdrop-filter: blur(8px);
-  border: 4px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.69);
+  backdrop-filter: blur(3px);
+  border: 4px solid var(--main-color);
   border-radius: 20px;
   color: var(--text-color);
   display: none;
@@ -58,15 +39,18 @@ h2{
   display: flex;
 }
 .game-over-container h2{
-  color: red;
+  user-select: none;
+  color: var(--main-color);
+  text-shadow: 3px 3px 0px var(--text-color);
   font-size: 50pt;
 }
 .game-over-container a{
   text-decoration: none;
-  color: red;
+  color: var(--main-color);
+  text-shadow: 1px 1px 0px var(--text-color);
 }
 .game-over-container a:hover{
-  color: darkred;
+  filter: brightness(150%);
 }
 .hud{
   position: fixed;
@@ -78,5 +62,11 @@ h2{
 #health{
   user-select: none;
   font-size: 32pt;
-  color: red;
+  color: purple;
+}
+h2:has(.score){
+  user-select: none;
+}
+main canvas{
+  border-radius: 20px;
 }

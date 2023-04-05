@@ -5,7 +5,7 @@ class BloodParticle {
     this.pos = createVector(x, y);
     this.vel = createVector(random(-5, 5), random(-5, 5));
     this.size = random(5, 15);
-    this.color = color(255, 0, 0, 200);
+    this.color = color(135, 0, 20);
     this.lifespan = 35;
   }
 
@@ -17,7 +17,7 @@ class BloodParticle {
 
   display() {
     noStroke();
-    fill(this.color);
+    fill(this.color)
     ellipse(this.pos.x, this.pos.y, this.size);
   }
 }
