@@ -8,8 +8,9 @@ class Game{
     this.player = new Player()
     this.playerImage
     this.score = 0
-    this.highscore = localStorage.getItem('highscore')
-    console.log(this.highscore)
+    // console.log(this.highscore)
+    
+    
     this.backgroundImage
     
     this.zombies = []
@@ -19,18 +20,22 @@ class Game{
       case "easy":
         this.spawnInterval = 80; // spawn a zombie every 60 frames
         this.lowestPossibleSpawnInterval = 25
+        this.highscore = localStorage.getItem('highscore-easy')
         break;
       case "medium":
         this.spawnInterval = 60
         this.lowestPossibleSpawnInterval = 20
+        this.highscore = localStorage.getItem('highscore-medium')
         break;
       case "hard":
         this.spawnInterval = 30
         this.lowestPossibleSpawnInterval = 12
+        this.highscore = localStorage.getItem('highscore-hard')
         break;
       case "impossible":
         this.spawnInterval = 20
         this.lowestPossibleSpawnInterval = 8
+        this.highscore = localStorage.getItem('highscore-impossible')
         break;
     }
     //this.spawnInterval = 60; // spawn a zombie every 60 frames
@@ -159,7 +164,21 @@ class Game{
   setHighScore(){
     if(this.score > this.highscore){
       this.highscore = this.score
-      localStorage.setItem('highscore', this.highscore);
+
+      switch(difficulty){
+        case 'easy':
+          localStorage.setItem('highscore-easy', this.highscore);
+          break;
+        case "medium":
+          localStorage.setItem('highscore-medium', this.highscore);
+          break;
+        case "hard":
+          localStorage.setItem('highscore-hard', this.highscore);
+          break;
+        case "impossible":
+          localStorage.setItem('highscore-impossible', this.highscore);
+          break; 
+      }
     }
   }
 }
