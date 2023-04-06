@@ -1,7 +1,7 @@
 # Zombie Apocalypse
 
 A simple game developed using p5.js and p5.sound.min.js libraries. The player's objective is to survive as long as possible in a zombie-infested world.
-The purpose of coding this game was to learn object-oriented-programming and how the js library p5 work.  
+The purpose of coding this game was to learn object-oriented-programming and how the js library p5 works.  
 
 Play Here: https://fabian04hv.github.io/zombie-game/index.html
 
