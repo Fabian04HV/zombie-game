@@ -8,8 +8,6 @@ class Game{
     this.player = new Player()
     this.playerImage
     this.score = 0
-    // console.log(this.highscore)
-    
     
     this.backgroundImage
     
@@ -38,9 +36,7 @@ class Game{
         this.highscore = localStorage.getItem('highscore-impossible')
         break;
     }
-    //this.spawnInterval = 60; // spawn a zombie every 60 frames
     this.spawnIntervalDecrement = 0.035;
-    // this.lowestPossibleSpawnInterval = 20
     this.lastSpawnFrame = 0;
 
     this.zombieImagesIndex = 0
@@ -100,7 +96,6 @@ class Game{
     this.displayScore()
   }
   draw(){
-    // console.log(this.gunSound.volume)
     if(gameOver) {
       gameOverScreen.classList.add("active")
       noLoop()

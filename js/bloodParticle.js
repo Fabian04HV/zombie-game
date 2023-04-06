@@ -27,16 +27,3 @@ function createBloodSplash(x, y) {
     bloodParticles.push(new BloodParticle(x, y));
   }
 }
-
-// function draw() {
-//   // your game code here
-
-//   // update and display blood particles
-//   for (let i = bloodParticles.length - 1; i >= 0; i--) {
-//     bloodParticles[i].update();
-//     bloodParticles[i].display();
-//     if (bloodParticles[i].lifespan <= 0) {
-//       bloodParticles.splice(i, 1);
-//     }
-//   }
-// }
